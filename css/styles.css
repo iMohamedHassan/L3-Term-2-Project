@@ -17,8 +17,10 @@ body {
     rgba(255, 255, 255, 1) 100%
   );
   margin: 0;
-  font-family: "Merriweather", serif;
+  font-family: Arial, sans-serif;
   color: #171a53;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Typeography General*/
@@ -57,6 +59,8 @@ main {
 section {
   position: relative;
   min-height: 80vh;
+  padding: 2em;
+  margin: 1em auto;
 }
 
 /* ---- Module Rules ---- */
@@ -100,6 +104,7 @@ section {
   background: #171a53;
   padding: 3em;
   color: #fff;
+  max-width: 100%;
 }
 
 .page__footer p {
@@ -111,6 +116,9 @@ section {
 .landing__container {
   padding: 1em;
   text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 35em) {
@@ -276,59 +284,76 @@ section.active .landing__container::after {
 /* TODO: Add styles for Comments section and form */
 
 /* Center the Comments Section */
-#comments {
+#comments .landing__container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  padding: 1.5em;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2em auto;
+  max-width: 800px;
+  width: 90%;
 }
 
+/* Comments Section Heading */
 #comments h2 {
-  text-align: center; /* Center the heading text */
-}
-
-#comments .landing__container {
-  width: 600px; /* Set a fixed width for the container */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 2em; /* Add padding for better spacing */
-  background-color: #fff; /* Optional: Add a background color */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  font-family: "Fira Sans", sans-serif;
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 0.5em;
 }
 
 /* Form Styling */
 #commentForm {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  margin-top: 1em;
-  align-items: center; /* Center the form elements */
+  gap: 1.5em;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
 #commentForm label {
   font-weight: bold;
-  align-self: flex-start; /* Align labels to the left */
+  font-size: 1em;
+  color: #555;
+  text-align: left;
 }
 
 #commentForm input,
 #commentForm textarea {
-  padding: 0.5em;
+  padding: 0.8em;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1em;
-  width: 100%; /* Make inputs take up the full width */
-  max-width: 800px; /* Increase the maximum width */
+  width: 100%;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+#commentForm input:focus,
+#commentForm textarea:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 #commentForm button {
-  padding: 0.7em 1.5em;
+  padding: 0.8em 1.5em;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 #commentForm button:hover {
@@ -338,30 +363,47 @@ section.active .landing__container::after {
 /* Comments List Styling */
 #commentsList {
   margin-top: 2em;
-  text-align: left; /* Align comments to the left */
-  width: 100%; /* Ensure comments take up the full width */
-  max-width: 800px; /* Increase the width of the comments list */
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+#commentsList h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 0.5em;
 }
 
 #commentsList .comment {
-  border-bottom: 1px solid #ccc;
-  padding: 1em 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #commentsList .comment p {
   margin: 0.5em 0;
+  color: #555;
+  font-size: 1em;
 }
 
-/* Style for the Clear Comments button */
+/* Clear Comments Button */
 #clearComments {
-  margin-top: 1em;
-  padding: 0.7em 1.5em;
+  margin-top: 1.5em;
+  padding: 0.8em 1.5em;
   background-color: #ff4d4d;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 #clearComments:hover {
@@ -404,4 +446,95 @@ section.active .landing__container::after {
 
 .collapse-button:hover {
   background-color: #e68900;
+}
+
+
+
+.landing__container {
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles for Tablets (768px and below) */
+@media (max-width: 768px) {
+  section {
+    padding: 1.5em;
+    margin: 1em auto;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  #comments .landing__container {
+    padding: 1em;
+    max-width: 95%;
+  }
+
+  #commentForm {
+    max-width: 100%;
+  }
+
+  #commentsList {
+    max-width: 100%;
+  }
+
+  #commentForm input,
+  #commentForm textarea {
+    width: 100%;
+  }
+
+  #scrollToTop {
+    bottom: 1.5em;
+    right: 1.5em;
+  }
+}
+
+/* Responsive Styles for Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  section {
+    padding: 1em;
+    margin: 0.5em auto;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  #comments .landing__container {
+    padding: 0.8em;
+    max-width: 100%;
+  }
+
+  #commentForm {
+    max-width: 100%;
+  }
+
+  #commentsList {
+    max-width: 100%;
+  }
+
+  #commentForm input,
+  #commentForm textarea {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  #clearComments {
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+  }
+
+  #scrollToTop {
+    bottom: 1em;
+    right: 1em;
+    font-size: 1.2em;
+  }
+
+  .collapse-button {
+    font-size: 0.9em;
+    padding: 0.4em 0.8em;
+  }
 }

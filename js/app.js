@@ -119,6 +119,23 @@ commentsSection.innerHTML = `
 
 document.querySelector("main").appendChild(commentsSection);
 
+const commentsNavItem = document.createElement("li");
+const commentsNavLink = document.createElement("a");
+commentsNavLink.href = `#comments`;
+commentsNavLink.textContent = "Comments";
+commentsNavLink.classList.add("menu__link");
+commentsNavItem.appendChild(commentsNavLink);
+navBar.querySelector("#navbar__list").appendChild(commentsNavItem);
+
+commentsNavLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  const targetSection = document.getElementById("comments");
+  targetSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
+
 const commentForm = document.getElementById("commentForm");
 const commentsList = document.getElementById("commentsList");
 
