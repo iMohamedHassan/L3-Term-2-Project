@@ -19,9 +19,6 @@ body {
   margin: 0;
   font-family: "Merriweather", serif;
   color: #171a53;
-  font-family: Arial, sans-serif;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 /* Typeography General*/
@@ -60,9 +57,6 @@ main {
 section {
   position: relative;
   min-height: 80vh;
-  padding: 2em;
-  margin: 1em auto;
-  max-width: 1200px;
 }
 
 /* ---- Module Rules ---- */
@@ -117,9 +111,6 @@ section {
 .landing__container {
   padding: 1em;
   text-align: left;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 35em) {
@@ -413,63 +404,4 @@ section.active .landing__container::after {
 
 .collapse-button:hover {
   background-color: #e68900;
-}
-
-/* Responsive Styles for Tablets (768px and below) */
-@media (max-width: 768px) {
-  section {
-    padding: 1.5em;
-    margin: 1em auto;
-  }
-
-  .landing__container {
-    padding: 1em;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  #commentForm input,
-  #commentForm textarea {
-    width: 100%;
-  }
-
-  #scrollToTop {
-    bottom: 1.5em;
-    right: 1.5em;
-  }
-}
-
-/* Responsive Styles for Mobile Devices (480px and below) */
-@media (max-width: 480px) {
-  section {
-    padding: 1em;
-    margin: 0.5em auto;
-  }
-
-  .landing__container {
-    padding: 0.8em;
-  }
-
-  h2 {
-    font-size: 1.8em;
-  }
-
-  #commentForm input,
-  #commentForm textarea {
-    width: 100%;
-    font-size: 0.9em;
-  }
-
-  #scrollToTop {
-    bottom: 1em;
-    right: 1em;
-    font-size: 1.2em;
-  }
-
-  .collapse-button {
-    font-size: 0.9em;
-    padding: 0.4em 0.8em;
-  }
 }
